@@ -1,0 +1,23 @@
+Explorative Datenanalyse
+
+
+Fehlende daten
+
+Anzahl Flüge, wo alle Delay-Gründe LEER (NaN) sind: 689270
+Durchschn. ArrDelay, wenn Gründe leer sind: 3.56 min
+Maximales ArrDelay, wenn Gründe leer sind: 14.0 min
+Anzahl Flüge mit >15min Verspätung aber ohne Grund: 0
+
+------------------------------
+Bei signifikanten Verspätungen stimmt die Summe der Gründe in 100.0% der Fälle mit ArrDelay überein.
+------------------------------
+
+### SUMMIERTE VERSPÄTUNGSGRÜNDE (GESAMTMINUTEN) ###
+
+LateAircraftDelay   :      31,557,038 Minuten
+CarrierDelay        :      23,926,070 Minuten
+NASDelay            :      18,739,310 Minuten
+WeatherDelay        :       4,620,160 Minuten
+SecurityDelay       :         112,445 Minuten
+
+GESAMT              :      78,955,023 Minuten

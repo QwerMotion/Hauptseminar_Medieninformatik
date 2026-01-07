@@ -1,0 +1,93 @@
+Experiment 1
+------------
+
+Training läuft auf: cuda
+Lade Daten...
+Bereite Features vor (Skalierung & Encoding)...
+
+Starte Training...
+Epoch 1/20 - Training Loss (MSE): 3137.5596
+Epoch 2/20 - Training Loss (MSE): 3099.2797
+Epoch 3/20 - Training Loss (MSE): 3080.2028
+Epoch 4/20 - Training Loss (MSE): 3063.8167
+Epoch 5/20 - Training Loss (MSE): 3049.8490
+Epoch 6/20 - Training Loss (MSE): 3035.8899
+Epoch 7/20 - Training Loss (MSE): 3023.3115
+Epoch 8/20 - Training Loss (MSE): 3010.5599
+Epoch 9/20 - Training Loss (MSE): 2999.2895
+Epoch 10/20 - Training Loss (MSE): 2991.0034
+Epoch 11/20 - Training Loss (MSE): 2984.0324
+Epoch 12/20 - Training Loss (MSE): 2977.1049
+Epoch 13/20 - Training Loss (MSE): 2970.3755
+Epoch 14/20 - Training Loss (MSE): 2965.7047
+Epoch 15/20 - Training Loss (MSE): 2960.1548
+Epoch 16/20 - Training Loss (MSE): 2957.2192
+Epoch 17/20 - Training Loss (MSE): 2953.2391
+Epoch 18/20 - Training Loss (MSE): 2948.2248
+Epoch 19/20 - Training Loss (MSE): 2943.8388
+Epoch 20/20 - Training Loss (MSE): 2940.4511
+
+Starte Evaluierung auf Testdaten...
+------------------------------------------------
+Test Ergebnisse:
+Mean Squared Error (MSE): 2924.52
+Root Mean Squared Error (RMSE): 54.08
+Durchschnittlicher Fehler in Minuten: ca. +/- 54.08 Min
+------------------------------------------------
+
+Beispielhafte Vorhersagen vs. Realität (Erste 5 aus dem Testset):
+Vorhergesagt:  21.50 Min | Echt:   6.00 Min | Diff:  15.50
+Vorhergesagt:  35.54 Min | Echt:  35.00 Min | Diff:   0.54
+Vorhergesagt:  41.38 Min | Echt:  10.00 Min | Diff:  31.38
+Vorhergesagt:  32.32 Min | Echt:  73.00 Min | Diff: -40.68
+Vorhergesagt:  71.37 Min | Echt:  49.00 Min | Diff:  22.37
+
+Modell gespeichert als 'delay_model.pth'
+
+
+
+Experiment 2
+------------
+
+Training läuft auf: cuda
+Lade Daten...
+Bereite Features vor (Skalierung & Encoding)...
+
+Starte Training...
+Epoch 1/20 - Training Loss (MSE): 320.5279
+Epoch 2/20 - Training Loss (MSE): 297.1045
+Epoch 3/20 - Training Loss (MSE): 295.1813
+Epoch 4/20 - Training Loss (MSE): 293.3961
+Epoch 5/20 - Training Loss (MSE): 292.3896
+Epoch 6/20 - Training Loss (MSE): 290.8176
+Epoch 7/20 - Training Loss (MSE): 289.7181
+Epoch 8/20 - Training Loss (MSE): 287.9701
+Epoch 9/20 - Training Loss (MSE): 286.2441
+Epoch 10/20 - Training Loss (MSE): 284.5977
+Epoch 11/20 - Training Loss (MSE): 283.4808
+Epoch 12/20 - Training Loss (MSE): 282.6959
+Epoch 13/20 - Training Loss (MSE): 282.0402
+Epoch 14/20 - Training Loss (MSE): 281.4311
+Epoch 15/20 - Training Loss (MSE): 280.8694
+Epoch 16/20 - Training Loss (MSE): 280.4368
+Epoch 17/20 - Training Loss (MSE): 279.9566
+Epoch 18/20 - Training Loss (MSE): 279.5958
+Epoch 19/20 - Training Loss (MSE): 279.0399
+Epoch 20/20 - Training Loss (MSE): 278.8508
+
+Starte Evaluierung auf Testdaten...
+------------------------------------------------
+Test Ergebnisse:
+Mean Squared Error (MSE): 443.69
+Root Mean Squared Error (RMSE): 21.06
+Durchschnittlicher Fehler in Minuten: ca. +/- 21.06 Min
+------------------------------------------------
+
+Beispielhafte Vorhersagen vs. Realität (Erste 5 aus dem Testset):
+Vorhergesagt:  11.83 Min | Echt:   6.00 Min | Diff:   5.83
+Vorhergesagt:  21.66 Min | Echt:  35.00 Min | Diff: -13.34
+Vorhergesagt:  20.27 Min | Echt:  10.00 Min | Diff:  10.27
+Vorhergesagt:  46.86 Min | Echt:  73.00 Min | Diff: -26.14
+Vorhergesagt:  44.01 Min | Echt:  49.00 Min | Diff:  -4.99
+
+Modell gespeichert als 'delay_model_2.pth'
