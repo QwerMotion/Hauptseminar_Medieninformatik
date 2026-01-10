@@ -1,0 +1,104 @@
+(2. block)
+umsetzung 
+EDA
+Experimente
+methode
+
+1-2 minuten uns und fachbereich vorstellen
+(gehört rein: Vorerfahrung, Studiengang, wo kommt man her, datenwissenschaftliche Erfahrung, in Firmen gearbeitet)
+-> lockert den flow 
+
+also grob hatte ich gedacht: Die EDA , Welche Methoden wir für die Problemstellung genutzt haben oder wollten und welche Experimente (ich experimentiere heute mal..vielleicht ergibt sich was) und da würde ich vielleicht zu den Ergebnissen nicht so viel sagen weil das dann eher in den letzten teil geht wo Ergebnisse diskutiert werden.
+
+===================================================================
+
+Start: Vorstellung des Selbst
+
+Name, Studiengang, Semester
+
+Zunächst Realschule + Ausbildung zum Werkzeugmechaniker, also keine Verbindung zur Informatik 
+
+während Ausbildung dann angefangen Literatur übers programmieren zu konsumieren
+zunächst C# buch, (terraria mods). 
+
+Dann Abitur -> Literatur zum Thema Machine-learning und neurale netze
+
+from scratch neurale netze implementiert zum herumspielen
+
+Facharbeit im Abitur: Bilderkennung mit yolo v5, object detection, menschen auf Bildern erkennen in Echtzeit,
+eigenen Datensatz gebaut, nie echte menschen gesehen, dennoch relativ präzise. 
+
+Generell viel programmiert, kreatives ventil
+
+Dann nach dem abitur ein halbes jahr bei der Telekom, duales Studium telekommunikationsinformatik - der lernstil
+war mir aber nichts -> wechsel an die TUC. 
+
+jetzt viel Spieleentwicklung
+
+------------------------------------------------------------------------
+Die EDA
+
+Meta-Informationen:
+	us-luftfahrtbehörde
+	(The U.S. Department of Transportation's Bureau of Transportation Statistics (BTS))
+	-> seriöse quelle +
+	-> allerdings schon älter - (2008)
+	-> zahlreiche daten +
+	-> einfach zu verarbeitende daten (numerisch, kategorisch) +
+
+	warum die anderen datensätze nicht? 
+	spam-sms, fake-news
+	
+
+händisches sichten, scharfes hinsehen
+auffallend:
+
+	leere Einträge
+
+pogrammatische analyse:
+	
+	1. Alles sichten:
+		methode: mit einem python script durch alles iterieren
+		ergebnis: Es sind nur ca. 1,9 mio flüge im satz, nicht wie angenommen 7 mio
+		erkenntnis: die index-nummern sind nicht fortlaufend,sondern enthalten sprünge
+		-> grund dafür nicht herausgefunden
+
+	2. die leeren einträge (delays):
+		methode: alle zeilen mit leeren einträgen herausfiltern in neuen datensatz
+		ergebnis: Anzahl Flüge, wo alle Delay-Gründe LEER (NaN) sind: 689270, also relevant viele (mehr als 1/3)
+		
+		-> händische analyse des Datensatzes mit rücksicht auf verspätungsgründe: alle "relativ wenig verspätung"
+		methode: maximale verspätung heraussuchen mit script
+		ergebnis: 	Maximales ArrDelay, wenn Gründe leer sind: 14.0 min
+				Anzahl Flüge mit >15min Verspätung aber ohne Grund: 0
+		erkenntis: 	Es zählt nicht als verspätung wenn es weniger als 15 minute sind, deshalb keine Gründe dafür
+				Bei signifikanten Verspätungen (>15 minute) stimmt die Summe der Gründe in 100.0% der Fälle mit ArrDelay überein.
+		
+
+	3. weitere analysen:
+		Verspätungsgründe summieren mit script:
+			LateAircraftDelay   :      31,557,038 Minuten
+			CarrierDelay        :      23,926,070 Minuten
+			NASDelay            :      18,739,310 Minuten
+			WeatherDelay        :       4,620,160 Minuten
+			SecurityDelay       :         112,445 Minuten
+
+			GESAMT              :      78,955,023 Minuten
+
+	4. Bilder zeigen
+
+Welche Methoden wir für die Problemstellung genutzt haben
+
+nn
+
+Experimente
+
+zwei nns
+
+
+
+
+
+
+
+
