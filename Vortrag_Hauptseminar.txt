@@ -89,9 +89,52 @@ pogrammatische analyse:
 
 Welche Methoden wir für die Problemstellung genutzt haben
 
-nn
+Neurale netze. Wir haben mittels neuralen Netzen, welche unterschiedliche Input-features nutzen, herausfinden wollen,
+wie gut sich Flugverspätungen vorhersagen lassen. Wie gut schneidet beispielsweise ein Netz auf den Validierungsdaten ab,
+wenn es ein bestimmtes feature hat oder nicht hat. Dieses vorgehen sollte dann Rückschlüsse darauf erlauben,
+wie wichtig einer dieser Datenpunkte ist. 
+
+Insbesondere wollten wir in Erfahrung bringen, ob sich mittels rein historischer Daten ein vergleichbares Vorhersageergebnis erzielen
+lässt, wie jenes, welches sich der expliziten Angabe von mehreren Faktoren bedient, die erst unmittelbar vor Start feststehen.  
+
+Praktisch bedeutet das, dass das Modell 1 lediglich Daten nutzt, die weit vor dem Start bereits feststehen wie geplante Abflugzeit, Wochentag und Monat.
+
+Das andere Modell hat Zugriff auf aktuellere Informationen, die bis unmittelbar vor start unbekannt sind, also
+in unserem Datensatz DepTime (tatsächliche Landezeit), DepDelay (verspätung der Landung), TaxiOut (wie lange ist man vom terminal
+zum Flieger genau unterwegs?)
+
 
 Experimente
+
+Okay, ich habe folgendes gemacht mit folgendem Ergebnis.
+Zwei Modelle traniert. Eines hatte folgende inputs 
+
+['Month', 'DayofMonth', 'DayOfWeek','CRSDepTime', 'CRSArrTime', 'UniqueCarrier','Distance', 'DepDelay'] (modell 2)
+
+und das andere hatte genau die gleichen außer DepDelay. (modell 1) Weil ich mir dachte, dass das vermutlich ein "wervoller" Datenpunkt sei.
+Für den UniqueCarrier habe ich one hot encoding verwendet. Außerdem hab ich alle numerischen werte mit einem transformer auf Standartwerte gebracht.
+Alle anderen spalten habe ich nicht verwendet.
+
+Output war jetzt nur ArrDelay.
+
+modell 1:    Mean Squared Error (MSE): 2924.52
+        Root Mean Squared Error (RMSE): 54.08
+        Durchschnittlicher Fehler in Minuten: ca. +/- 54.08 Min
+
+modell 2:     Mean Squared Error (MSE): 443.69
+        Root Mean Squared Error (RMSE): 21.06
+        Durchschnittlicher Fehler in Minuten: ca. +/- 21.06 Min
+
+
+Womit unsere These schonmal zu stimmen scheint
+
+
+ICh habe weiterhin, um herauszufinden, wie das Modell auf inputs reagiert, ein kleines python script geschrieben, welches
+die tranierten gewichte nutzt um outputs zu berechnen. Kleines Gui (bild zeigen am besten) 
+
+Was aber insgesamt weniger auffschlussreich war als erwartet. Die einzige erkenntnis,die ich davon trug, war, dass 
+das DepDelay wohl der wichtigste Indikator für das Netz zu sein scheint. 
+
 
 zwei nns
 
